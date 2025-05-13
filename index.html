@@ -1,22 +1,30 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الخيمة</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>التشفير بلغة الخيمة</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>خيمة</h1>
-        <textarea id="inputText" placeholder="اكتب النص هنا..."></textarea>
-        <div class="buttons">
-            <button onclick="encrypt()">تشفير</button>
-            <button onclick="decrypt()">فك التشفير</button>
-        </div>
-        <textarea id="outputCodes" placeholder="رموز الألوان تظهر هنا..."></textarea>
-        <div id="colorDisplay"></div>
-    </div>
-    <script src="script.js"></script>
+  <div id="password-screen">
+    <h2>مرحبًا بك في الخيمة</h2>
+    <input type="password" id="password-input" placeholder="ادخل كلمة المرور">
+    <button onclick="checkPassword()">دخول</button>
+    <p id="error-message"></p>
+  </div>
+
+  <div id="main-content" style="display: none;">
+    <h1>الخيمة</h1>
+    <textarea id="inputText" placeholder="اكتب نصًا بالعربية..."></textarea>
+    <button onclick="encryptText()">تشفير</button>
+    <button onclick="decryptColors()">فك التشفير</button>
+    <div id="colorOutput"></div>
+    <button onclick="copyColors()">نسخ الرموز</button>
+    <button onclick="downloadText()">تحميل النص</button>
+    <textarea id="decryptedText" placeholder="النص المفكك" readonly></textarea>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
