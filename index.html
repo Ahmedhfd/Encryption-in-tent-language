@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تشفير الحروف إلى ألوان</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>موقع تشفير الحروف العربية إلى ألوان</h1>
+        <textarea id="inputText" placeholder="اكتب النص هنا..."></textarea>
+        <div class="buttons">
+            <button onclick="encrypt()">تشفير</button>
+            <button onclick="decrypt()">فك التشفير</button>
+        </div>
+        <textarea id="outputCodes" placeholder="رموز الألوان تظهر هنا..."></textarea>
+        <div id="colorDisplay"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
