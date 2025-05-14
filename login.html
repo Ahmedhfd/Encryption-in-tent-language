@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>التشفير بلغة الخيمة</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .tent-logo {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(to right, #FFA833, #33A8FF, #FF5733);
+      clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .tent-logo::before {
+      content: "</>";
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 28px;
+      font-weight: bold;
+      color: white;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+      animation: fadeIn 2s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .login-box {
+      margin-top: 40px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    input[type="password"] {
+      padding: 10px;
+      width: 200px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #FFA833;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #FF8F33;
+    }
+  </style>
+</head>
+<body>
+  <div class="tent-logo"></div>
+  <h1>مرحباً بك في الخيمة</h1>
+  <div class="login-box">
+    <p>أدخل كلمة المرور</p>
+    <input type="password" id="passwordInput" placeholder="000111">
+    <br>
+    <button onclick="checkPassword()">دخول</button>
+    <p id="errorMsg" style="color: red; display: none;">كلمة المرور غير صحيحة</p>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('passwordInput').value;
+      const errorMsg = document.getElementById('errorMsg');
+      const correct = "000111";
+
+      if (input === correct) {
+        window.location.href = "main.html";
+      } else {
+        errorMsg.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
